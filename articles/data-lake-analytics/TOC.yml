@@ -16,6 +16,11 @@
     href: data-lake-analytics-get-started-powershell.md
   - name: Azure CLI
     href: data-lake-analytics-get-started-cli.md
+- name: Samples
+  items:
+  - name: Azure Policy built-ins
+    displayName: samples, policies, definitions
+    href: ./policy-samples.md
 - name: How to
   items:
   - name: Manage Data Lake Analytics
@@ -121,11 +126,17 @@
   - name: Understand Apache Spark for U-SQL developers
     items:
     - name: Understand Apache Spark for U-SQL developers
-      href: data-lake-analytics-understand-spark-for-usql-developers.md
+      href: understand-spark-for-usql-developers.md
     - name: Understand Apache Spark data formats
-      href: data-lake-analytics-understand-spark-data-formats.md
+      href: understand-spark-data-formats.md
     - name: Understand Apache Spark code concepts
-      href: data-lake-analytics-understand-spark-code-concepts.md
+      href: understand-spark-code-concepts.md
+  - name: Troubleshoot U-SQL jobs
+    items:
+    - name: Troubleshoot U-SQL runtime failures
+      href: runtime-troubleshoot.md
+    - name: Troubleshoot a .NET upgrade
+      href: dotnet-upgrade-troubleshoot.md
 - name: Reference
   items:
   - name: Azure PowerShell
@@ -140,7 +151,7 @@
     href: /rest/api/datalakeanalytics/
   - name: Resource Manager template
     href: /azure/templates/microsoft.datalakeanalytics/allversions
-  - name: CLI
+  - name: Azure CLI
     href: https://docs.microsoft.com/cli/azure/dla
 - name: Resources
   items:
@@ -150,8 +161,8 @@
     href: https://azure.microsoft.com/roadmap/?category=intelligence-analytics
   - name: Request changes
     href: https://feedback.azure.com/forums/327234-data-lake
-  - name: MSDN Forum
-    href: https://social.msdn.microsoft.com/Forums/en-US/home?forum=AzureDataLake
+  - name: Microsoft Q&A question page
+    href: https://docs.microsoft.com/answers/topics/azure-data-lake-analytics.html
   - name: Pricing
     href: https://azure.microsoft.com/pricing/details/data-lake-analytics/
   - name: Pricing calculator

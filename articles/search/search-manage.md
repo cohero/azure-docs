@@ -1,5 +1,5 @@
 ---
-title: Service administration for Azure Cognitive Search in the portal
+title: Service administration in the portal
 titleSuffix: Azure Cognitive Search
 description: Manage an Azure Cognitive Search service, a hosted cloud search service on Microsoft Azure, using the Azure portal.
 
@@ -66,7 +66,7 @@ Although we can salvage your data, Azure Cognitive Search does not provide insta
 
 If continuous service is required in the event of catastrophic failures outside of Microsoft’s control, you could [provision an additional service](search-create-service-portal.md) in a different region and implement a geo-replication strategy to ensure indexes are fully redundant across all services.
 
-Customers who use [indexers](search-indexer-overview.md) to populate and refresh indexes can handle disaster recovery through geo-specific indexers leveraging the same data source. Two services in different regions, each running an indexer, could index the same data source to achieve geo-redundancy. If you are indexing from data sources that are also geo-redundant, be aware that Azure Cognitive Search indexers can only perform incremental indexing from primary replicas. In a failover event, be sure to re-point the indexer to the new primary replica. 
+Customers who use [indexers](search-indexer-overview.md) to populate and refresh indexes can handle disaster recovery through geo-specific indexers leveraging the same data source. Two services in different regions, each running an indexer, could index the same data source to achieve geo-redundancy. If you are indexing from data sources that are also geo-redundant, be aware that Azure Cognitive Search indexers can only perform incremental indexing (merging updates from new, modified, or deleted documents) from primary replicas. In a failover event, be sure to re-point the indexer to the new primary replica. 
 
 If you do not use indexers, you would use your application code to push objects and data to different search services in parallel. For more information, see [Performance and optimization in Azure Cognitive Search](search-performance-optimization.md).
 
@@ -93,9 +93,9 @@ A search service having more replicas can load balance query requests over a lar
 Although query throughput goes up as you add replicas, it does not precisely double or triple as you add replicas to your service. All search applications are subject to external factors that can impinge on query performance. Complex queries and network latency are two factors that contribute to variations in query response times.
 
 ### Add partitions
-Most service applications have a built-in need for more replicas rather than partitions. For those cases where an increased document count is required, you can add partitions if you signed up for Standard service. Basic tier does not provide for additional partitions.
+It's more common to add replicas, but when storage is constrained, you can add partitions to get more capacity. The tier at which you provisioned the service determines whether partitions can be added. The Basic tier is locked at one partition. Standard tiers and above support additional partitions.
 
-At the Standard tier, partitions are added in multiples of 12 (specifically, 1, 2, 3, 4, 6, or 12). This is an artifact of sharding. An index is created in 12 shards, which can all be stored on 1 partition or equally divided into 2, 3, 4, 6, or 12 partitions (one shard per partition).
+Partitions are added in multiples of 12 (specifically, 1, 2, 3, 4, 6, or 12). This is an artifact of sharding. An index is created in 12 shards, which can all be stored on 1 partition or equally divided into 2, 3, 4, 6, or 12 partitions (one shard per partition).
 
 ### Remove replicas
 After periods of high query volumes, you can use the slider to reduce replicas after search query loads have normalized (for example, after holiday sales are over). There are no further steps required on your part. Lowering the replica count relinquishes virtual machines in the data center. Your query and data ingestion operations will now run on fewer VMs than before. The minimum requirement is one replica.

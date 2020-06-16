@@ -4,9 +4,17 @@
   items:
   - name: About Peering Service
     href: about.md
+- name: Tutorials
+  items:
+  - name: Register a Peering Service connection
+    href: azure-portal.md
+  - name: Create a Peering Service Connection
+    href: create-connection.md
+  - name: Measure Peering Service connection telemetry
+    href: measure-connection-telemetry.md
 - name: Concepts
   items:
-  - name: Location and partners
+  - name: Locations and partners
     href: location-partners.md
   - name: Connection
     href: connection.md
@@ -18,33 +26,29 @@
   items:
   - name: Register Peering Service
     items:
-      - name: Azure portal
-        href: azure-portal.md
       - name: Azure PowerShell
         href: powershell.md
       - name: Azure CLI
         href: cli.md
-  - name: Measure connection telemetry 
-    href: measure-connection-telemetry.md
 - name: References
   items:
   - name: Azure PowerShell
-    href: /powershell/module/az.network
+    href: /powershell/module/az.peering
   - name: Azure CLI
-    href: /cli/azure/network
+    href: /cli/azure/ext/peering/peering
 - name: Resources
   items:
   - name: Azure roadmap
     href: https://azure.microsoft.com/roadmap/?category=networking
   - name: Networking blog
     href: https://azure.microsoft.com/blog/topics/networking
-  - name: Networking forum
-    href: https://social.msdn.microsoft.com/Forums/azure/home?forum=WAVirtualMachinesVirtualNetwork
+  - name: Microsoft Q&A question page for Networking
+    href: https://docs.microsoft.com/answers/topics/azure-virtual-network.html
   - name: Networking feedback
     href: https://feedback.azure.com/forums/217313-networking?category_id=77469
   - name: Pricing
-    href: https://azure.microsoft.com/pricing/details/peering-service
+    href: https://azure.microsoft.com/pricing/details/azure-peering/
   - name: Pricing calculator
-    href: https://azure.microsoft.com/pricing/calculator/
+    href: https://azure.microsoft.com/pricing/calculator/?service=azure-peering
   - name: FAQs
     href: faq.md
